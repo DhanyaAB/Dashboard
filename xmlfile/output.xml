@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot rpa="false" generator="Robot 3.1.2 (Python 3.5.2 on linux)" generated="20190820 11:09:35.894">
+<suite name="New Api Test" source="/home/asm/PycharmProjects/myproject/poly_robot/new_api_test.robot" id="s1">
+<test name="Get API Responses of Endpoint /downloads/&lt;path:filename&gt;" id="s1-t1">
+<kw name="Get Token" library="test">
+<arguments>
+<arg>${server_ip}</arg>
+</arguments>
+<assign>
+<var>${token}</var>
+</assign>
+<msg timestamp="20190820 11:09:37.857" level="INFO">${token} = eyJhbGciOiJIUzUxMiIsImlhdCI6MTU2NjI3OTU3NywiZXhwIjoxNTY2MjgwMTc3fQ.eyJpZCI6MX0.1cOB4npQom32itw5XyqLqXLoK8aG_khvuXUNEVv5d3P6VIG9vO13H7ND7cBInAkDK3xIf266PvMRzbDns4XL4g</msg>
+<status starttime="20190820 11:09:37.121" endtime="20190820 11:09:37.857" status="PASS"></status>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<arguments>
+<arg>${token}</arg>
+</arguments>
+<msg timestamp="20190820 11:09:37.859" level="INFO">${token} = eyJhbGciOiJIUzUxMiIsImlhdCI6MTU2NjI3OTU3NywiZXhwIjoxNTY2MjgwMTc3fQ.eyJpZCI6MX0.1cOB4npQom32itw5XyqLqXLoK8aG_khvuXUNEVv5d3P6VIG9vO13H7ND7cBInAkDK3xIf266PvMRzbDns4XL4g</msg>
+<status starttime="20190820 11:09:37.858" endtime="20190820 11:09:37.859" status="PASS"></status>
+</kw>
+<doc>Connects to the API and gets the responses of endpoint /downloads/&lt;path:filename&gt;</doc>
+<tags>
+<tag>REST API GET Responses</tag>
+</tags>
+<status starttime="20190820 11:09:37.120" endtime="20190820 11:09:37.859" status="PASS" critical="yes"></status>
+</test>
+<test name="Validating Rules" id="s1-t2">
+<kw name="Rules Validation" library="test">
+<arguments>
+<arg>${server_ip}</arg>
+<arg>${token}</arg>
+</arguments>
+<assign>
+<var>${Result}</var>
+</assign>
+<msg timestamp="20190820 11:09:38.188" level="INFO">connection successful</msg>
+<msg timestamp="20190820 11:09:38.189" level="INFO">${Result} = {'data': ['Application Shim Installation', 'Executables Started in Suspicious Folder', 'Certutil Encode', 'Command Line Execution with suspicious URL and AppData Strings', 'Image File Execution Option...</msg>
+<status starttime="20190820 11:09:37.860" endtime="20190820 11:09:38.189" status="PASS"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${Result}</arg>
+</arguments>
+<msg timestamp="20190820 11:09:38.189" level="INFO">{'data': ['Application Shim Installation', 'Executables Started in Suspicious Folder', 'Certutil Encode', 'Command Line Execution with suspicious URL and AppData Strings', 'Image File Execution Options Injection', 'Dridex Process Pattern', 'Logon Scripts', 'WMI Spawning Windows PowerShell', 'DHCP Callout DLL installation', 'Exploit for CVE-2015-1641', 'Install_AppInit_Shim', 'Malicious Base64 encoded PowerShell Keywords in command lines', 'Execution in Webserver Root Folder', 'Exploit for CVE-2017-0261', 'Hijack legit RDP session to move laterally', 'Hooking', 'Malicious PowerShell Commandlet Names', 'MSHTA Spawning Windows Shell', 'Modify Existing Service', 'Webshell Detection With Command Line Keywords', 'MS HTA tool with Network Callback', 'MsiExec with HTTP Installer', 'Microsoft Office Product Spawning Windows Shell', 'Office Application Startup', 'Net.exe Execution', 'New RUN Key Pointing to Suspicious Folder', 'PhishTank', 'Powershell with Suspicious Arguments', 'at_command', 'process_extension_anomalies', 'PowerShell Download from URL', 'Outbound SMB from a User Process', 'Processes created by MMC', 'Registry Persistence via Explorer Run Key', 'Processes in Unusual Paths', 'Possible Shim Database Persistence via sdbinst.exe', 'PowerShell Rundll32 Remote Thread Creation', 'RDP Sensitive Settings Changed', 'PowerShell Base64 Encoded Shellcode', 'QuarksPwDump Dump File', 'Renamed Powershell.exe', 'PowerShell Script Run in AppData', 'Rubeus Hack Tool', 'Regsvr32 Anomaly', 'Squirrel Lolbin', 'Registry Persistence Mechanisms', 'Rundll32 Loading by Ordinal', 'SYSTEM Escalation from User Directory', 'Suspicious Calculator Usage', 'Suspicious Certutil Command', 'Suspicious Process Start Locations', 'Rundll32 Internet Connection', 'Suspicious Parent of Csc.exe', 'Suspicious Program Location with Network Connections', 'Suspicious Control Panel DLL Load', 'Shells Spawned by Web Servers', 'Suspicious Svchost Process', 'Sysprep on AppData Folder', 'Suspicious Encoded PowerShell Command Line', 'Suspicious Use of Procdump', 'Suspicious Execution from Outlook', 'System File Execution Location Anomaly', 'Taskmgr as LOCAL_SYSTEM', 'Taskmgr as Parent', 'UAC Bypass via sdclt', 'Unexpected Network Activity from Microsoft Tools', 'WannaCry Ransomware', 'Suspicious PowerShell Invocation based on Parent Process', 'Windows Shell Spawning Suspicious Program', 'disable_windows_fw', 'Suspicious PowerShell Parameter Substring', 'msxsl.exe Network', 'sip_provider', 'suspicious_office_children', 'dns_serverlevelplugindll', 'recycle_bin_process', 'stickykey_like_backdoor', 'sysinternals_eula_accepted', 'uac_eventviewer', 'uac_sdclt', 'testing_rule', 'yara_alerts', 'testing_rule3', 'system_restore_process', 'Executable used by PlugX in Uncommon Location', 'Suspicious Process Creation', 'Clearing Windows Event Logs', 'Suspicious Program Location Process Starts', 'COM Hijack via Script Object', 'Mimikatz Detection LSASS Access', 'Suspicious Reconnaissance Activity', 'Cmdkey Cached Credentials Recon', 'MSHTA spwaned by SVCHOST as seen in LethalHTA', 'Malware Shellcode in Verclsid Target Process', 'Suspicious TSCON Start', 'Change Default File Association', 'Possible SPN Enumeration', 'Suspicious execution via WMI', 'Default PowerSploit Schtasks Persistence', 'Possible Applocker Bypass', 'RDP over Reverse SSH Tunnel', 'Trust Provider Modification', 'Detection of SafetyKatz', 'Scheduled Task Creation', 'Suspicious Commandline Escape', 'UAC Bypass via Event Viewer', 'Exploit for CVE-2017-8759', 'Catalog Deletion with wbadmin.exe', 'USN Journal Deletion with fsutil.exe', 'process_name_masquerade', 'Suspicious Typical Malware Back Connect Ports', 'Export Registry Hives', 'WMI Persistence - Script Event Consumer', 'Activity Related to NTDS.dit Domain Hash Retrieval', 'Execution in Non-Executable Folder', 'Hidden Files and Directories', 'Java Running with Remote Debugging', 'Ping Hex IP', 'PowerShell Network Connections', 'Powershell AMSI Bypass via .NET Reflection', 'Suspicious Rundll32 Activity', 'Suspicious WMI execution', 'Suspicious GUP Usage', 'WScript or CScript Dropper', 'findstr_pw_search', 'WSF_JSE_JS_VBA_VBE File Execution'], 'message': 'Bitsadmin Download Rule is not present', 'status': 'Failed'}</msg>
+<status starttime="20190820 11:09:38.189" endtime="20190820 11:09:38.189" status="PASS"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${Result["status"]}</arg>
+<arg>${status}</arg>
+</arguments>
+<msg timestamp="20190820 11:09:38.190" level="FAIL">Failed != success</msg>
+<status starttime="20190820 11:09:38.189" endtime="20190820 11:09:38.190" status="FAIL"></status>
+</kw>
+<doc>Validating the default Rules</doc>
+<tags>
+<tag>Validating Rules</tag>
+</tags>
+<status starttime="20190820 11:09:37.859" endtime="20190820 11:09:38.190" status="FAIL" critical="yes">Failed != success</status>
+</test>
+<status starttime="20190820 11:09:35.895" endtime="20190820 11:09:38.191" status="FAIL"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="1" pass="1">Critical Tests</stat>
+<stat fail="1" pass="1">All Tests</stat>
+</total>
+<tag>
+<stat fail="0" pass="1">REST API GET Responses</stat>
+<stat fail="1" pass="0">Validating Rules</stat>
+</tag>
+<suite>
+<stat fail="1" name="New Api Test" pass="1" id="s1">New Api Test</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
