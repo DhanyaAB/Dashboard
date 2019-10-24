@@ -80,9 +80,9 @@ def get_tests():
     data3 = i["robot"]["suite"]["status"]["@starttime"]
     t1 = slice(9)
     t = data3[t1]
-    print(t)
+    #print(t)
     da = '/'.join( (t[4:6], t[6:], t[:4]) )
-    print(da)
+    #print(da)
     for i in l1:
         name = i['robot']['suite']['@name']
         data = i['robot']['suite']['test']
