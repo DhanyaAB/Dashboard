@@ -1,0 +1,82 @@
+<div class="fluid-container">
+  <div class="row">
+      <div class="col-lg-12">
+          <h4 class="mt-4">TABLE FOR TESTS: </h4>
+          <table class="table table-hover table-bordered table-responsive-xl">
+            	<thead class="thead-light">
+                  <tr>
+                    <th>Name Of Tests</th>
+                    <th>Date</th>
+                    <th>Start time</th>
+                    <th>End time</th>
+                    <th>Pass</th>
+                    <th>Fail</th>
+                    <th>Critcal</th>
+                  </tr>
+                </thead>
+              <ng-container *ngFor="let value of data">
+                  <tbody>
+                      <tr (click)="value.expanded = !value.expanded">
+                        <td> {{ value.expanded ? '&ndash;' : '+'}} {{value.name}} </td>
+                        <td>{{value.date }}</td>
+                        <td>{{value.stime | slice:9}}</td>
+                        <td>{{value.etime | slice:9}}</td>
+                        <td>{{value.pass}}</td>
+                        <td>{{value.fail}}</td>
+                        <td>{{value.criti}}</td>
+                      </tr>
+                     </tbody>
+                  <div *ngIf="value.expanded">
+                      <thead class="thead-dark" >
+                          <tr>
+                            <th>Sl.No</th>
+                            <th>Test Cases Name</th>
+
+                            <th>Start time</th>
+                            <th>End time</th>
+                            <th>Status</th>
+                            <th>Critcal</th>
+                          </tr>
+                        </thead>
+                      <ng-container *ngFor= "let t of  findDetails(value); let i =index" >
+                            <tbody>
+                                <tr (click)="t.expanded = !t.expanded">
+                                    <td>{{ t.expanded ? '&ndash;' : '+'}} {{i+1}}</td>
+
+                                    <td>{{t.name | slice:0:30}}</td>
+                                    <td>{{t.stime | slice:9}}</td>
+                                    <td>{{t.etime | slice:9}}</td>
+                                    <td>{{t.stas}}</td>
+                                    <td>{{t.criti}}</td>
+                                  </tr>
+                              </tbody>
+                            <ng-container *ngIf="t.expanded">
+                                <thead class="thead-light" >
+                                    <tr>
+                                      <th>Sl.No</th>
+                                      <th>Tag Name</th>
+
+                                      <th>Start time</th>
+                                      <th>End time</th>
+                                      <th>Status</th>
+                                    </tr>
+                                  </thead>
+                                <tbody>
+                                    <tr *ngFor ="let k of keywords(t);let j = index">
+                                        <td>{{j+1}}</td>
+                                        <td>{{k.name | slice:0:30}}</td>
+
+                                        <td>{{k.stime | slice:9}}</td>
+                                        <td>{{k.etime | slice:9}}</td>
+                                        <td>{{k.stas}}</td>
+                                      </tr>
+                                </tbody>
+                            </ng-container>
+                      </ng-container>
+                  </div>
+              </ng-container>
+          </table>
+      </div>
+  </div>
+</div>
+

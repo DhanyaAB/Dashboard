@@ -1,0 +1,50 @@
+<div class="fluid-container">
+  <div class="row">
+      <div class="col-md-4 col-sm-4">
+        <div class="card border-warning1 mx-sm-1 p-3">
+          <div class="card border-warning1 shadow text-warning1 p-3 my-card" ><span class="fa fa-inbox" aria-hidden="true"></span></div>
+          <div class="text-warning1 text-center mt-3"><h4>Total Test Cases :  {{total}}</h4></div>
+          <div class="text-warning1 text-center mt-2"><h1></h1></div>
+      </div>
+      
+      </div>
+      <div class="col-md-4 col-sm-4">
+        <div class="card border-success mx-sm-1 p-3">
+          <div class="card border-success shadow text-success p-3 my-card"><span class="fa fa-eye" aria-hidden="true"></span></div>
+          <div class="text-success text-center mt-3"><h4>Passed Test Cases :  {{pass}}</h4></div>
+          <div class="text-success text-center mt-2"><h1></h1></div>
+      </div>
+      </div>
+      <div class="col-md-4 col-sm-4">
+        <div class="card border-info mx-sm-1 p-3">
+          <div class="card border-info shadow text-info p-3 my-card" ><span class="fa fa-car" aria-hidden="true"></span></div>
+          <div class="text-info text-center mt-3"><h4>Failed Test Cases : {{fail}}</h4></div>
+          <div class="text-info text-center mt-2"><h1></h1></div>
+      </div>
+    </div>
+  </div>
+  <br>
+  
+  <div class="row">
+      <div class="col-xl-6"> 
+          <div class="card border-primary mx-sm-1 p-3">
+            <div class="card-header">
+              <h3>Total Pass/Fail Test Cases</h3>
+            </div>
+            <div class="card-body">
+                <canvas id="canvas1" ></canvas>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-6">            
+            <div class="card border-primary mx-sm-1 p-3">
+                <div class="card-header">
+                    <h3>Pass/Fail for every Tests</h3>
+                </div>
+              <div class="card-body">
+                <canvas id="canvas2" ></canvas>
+              </div>
+            </div>
+          </div>
+  </div>
+
