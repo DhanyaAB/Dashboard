@@ -46,7 +46,7 @@ def get_count():
     output1 = curr.find_one(sort=[('_id', pymongo.DESCENDING)])   
 
     l1 = [output1['data'] ]
-    print(l1)
+    #print(l1)
     for i in l1:
         name = i['robot']['suite']['@name']
         data2 = i['robot']['statistics']['suite']['stat']
